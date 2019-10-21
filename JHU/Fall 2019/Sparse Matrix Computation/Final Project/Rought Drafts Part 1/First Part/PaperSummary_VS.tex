@@ -1,0 +1,63 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+ 
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+%\ifcvprfinal\pagestyle{empty}\fi
+%\setcounter{page}{4321}
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{Face Recognition Using Eigen Faces}
+
+\author{Summary written by Vishwanath Sindagi\\ February 11, 2019}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+
+
+\maketitle
+%\thispagestyle{empty}
+
+
+%%%%%%%%% BODY TEXT
+\noindent\textbf{Summary: } The paper addresses  the problem of different face processing tasks such as  detection , recognition and tracking, with a specific emphasis on face recognition. This work is  inspired by  Sirovich and Kirby \cite{sirovich1987low}, where a set of faces is efficiently represented using principal component analysis. 
+
+\noindent\textbf{Related work:} The authors categorize prior work primarily into 2 categories: (i) Approaches \cite{bledsoe1964model,kanade1974picture,yuille1992feature} that focus on detecting individual features such as eyes, nose, mouth \etc and by defining a face model that encodes the positional relationship between these features. Such methods are not easily extensible to multiple views and, it has been demonstrated that individual features and their relationships do not provide sufficient representation to account for the performance of human-level recognition. (ii)  Connectionist approaches \cite{fleming1990categorization,hinton2014storage,stonham1986practical} that capture configurational  nature of the task. These methods  train neural networks via backpropagation. However, it was unclear how these methods will scale to larger problems. 
+
+\noindent\textbf{Approach:} A typical face image of size 256$\times$ 256 describes a 65,536 dimensional vector, or equivalently, a point in 65,536 dimensional space. Therefore, a set of images, map to a set of points in this huge 65,536 dimensional space. Face images, typically being similar in overall configuration and having high correlation among neighbouring pixels, will not be randomly distributed in this huge space. Rather, these set of images will lie on a lower-dimensional sub-space or manifold. Based on this arguments and some insights from the information theory approach of coding and decoding faces, the authors aim to map images to lower dimensional space by extracting most relevant information in a face image. This is achieved by capturing the variation in a collection of face images. Mathematically, this amounts to finding the principal components of the distribution of faces, or the eigenvectors  of the covariance matrix of  the set of face images.  These eigen vectors characterize the variation between face images. Each face image in the training set can be represented exactly in terms of a linear combination of eigenfaces. Since, only a few eigenvectors/faces capture most of the variation in the dataset, the proposed method can be implemented efficiently.  
+
+Specifically, the proposed approach involves transformation of face images into a set of characteristic feature images (called as eigen faces), which are the principal components of the initial training set of face images. New faces are recognized by projecting them into the sub-space spanned by the eigen faces and then choosing the face label that minimizes the distance to the projection of this new face. 
+
+\noindent\textit{Datasets, Experiments and Results:} The authors collected a new dataset consisting of 2500 images with 16 subjects covering different imaging conditions such as illumination, pose, view \etc.   Average classification accuracy is used to report the performance. Two sets of experiments are conducted: (i) Effects of varying lighting, size and head orientation is analzyed. The paper reports average classification accuracy of 96\% for lighting variation, 85\% over orientation variation and 64\% over size variation.  (ii) Effect of varying the acceptance threshold is varied. 
+
+\noindent\textbf{Strengths:} The paper provides new insights about the lower dimensional manifold along which the face images lie. They connect this insight nicely to the process of encoding/decoding face images,  which enabled them to develop a method that is based on dimensionality reduction. Further, the method uses raw intensity pixels for recognition with minimal processing. Since the method is entirely data driven, no prior knowledge of geometry is required.  Also, the paper addresses several implementation issues like providing neat tricks on making the computation of eigen vectors faster. The method is easy to implement and the training is fully automated. Overall, the authors demonstrated strong performance in terms of accuracy and computational efficiency. %Additionally, the results showed that the method is reasonably tolerant to small variations in illumination and head pose.  
+
+\noindent\textbf{Weaknesses:} First, since the method is based on PCA, it suffers from general drawbacks of PCA like  assumption of linearity. Also, PCA does not consider label information while training, limiting its discriminatory power. The method is efficient only when the number of face classes is larger than the dimensions of the face space. Also,   as the number of face classes increase, there could be increased overlap when representing the face images with the same face space, thus lowering the recognition rate. From the experiments, it can be observed that the dataset size is small as compared to the current trends. Additionally, the  method is very sensitive to little variations in scale and large variations in pose and background variation. 
+
+\noindent\textbf{Reflections:} While the authors take a different approach as compared to existing feature/configurational approaches, a more hybrid approach which can leverage advantages of both methods would be more beneficial. Also, based on the discussion in weaknesses section,  obvious approaches to improve the current algorithm would be to incorporate non-linearity by using kernel methods or by incorporating label information during training by using linear discriminant analysis framework. 
+
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{egbib}
+}
+
+\end{document}
