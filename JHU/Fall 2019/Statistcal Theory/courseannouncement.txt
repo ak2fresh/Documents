@@ -1,0 +1,54 @@
+
+Course Announcement
+
+553.730: Statistical Theory
+
+Fall 2019
+
+The fundamentals of mathematical statistics will be covered: 
+Bickel and Doksum Chapters 1-6.
+Topics include: 
+exponential family models, 
+distribution theory for statistics,
+the sufficiency principle, 
+least squares estimation, 
+the method of moments,
+maximum likelihood estimation, 
+Bayes and minimax procedures, 
+uniform minimum variance unbiased estimation, 
+hypothesis testing, the Neyman-Pearson lemma, likelihood ratio procedures, 
+limit theory for MLEs & M-estimates,
+the general linear model, the Gauss-Markov theorem, 
+simultaneous inference, 
+decision theory, 
+chi-square methods,
+goodness-of-fit tests, 
+and nonparametric and robust methods.
+
+Prerequisites:
+ * Probability at the 553.620 level (Ross's book)
+ * Statistics at the 553.630 level (Rice's book)
+
+Time: TuTh @ 3-4:15
+Section: F @ 3-3:50
+
+Text: B&D
+Bickel and Doksum, Mathematical Statistics, Vol I, 2/e, Updated Printing, 2007 
+--- (Be sure to get the 2007 "Updated Printing" version of the textbook!) 
+
+Instructor: Carey E. Priebe
+Clark 301D
+cep@jhu.edu
+
+TAs:
+Heather Patsolic <hgaddy1@jhu.edu>
+Guodong Chen <gchen35@jhu.edu>
+
+-----
+
+In spring 2020 I will teach a follow-on course to 553.730:
+EN.553.739: Statistical Pattern Recognition Theory & Methods
+"Statistical pattern recognition" is my version of an explicitly prob/stat-centric
+"machine learning" course, following naturally from 553.730.
+text: DGL = Devroye, Gyorfi & Lugosi, A Probabilistic Approach to Pattern Recognition, 1996.
+
