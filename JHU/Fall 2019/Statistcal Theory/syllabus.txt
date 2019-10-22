@@ -1,0 +1,140 @@
+
+553.730
+Fall 2019
+
+Syllabus: Chapters 1-6 in the textbook (B&D).
+
+
+Chapter 1 is a whirlwind tour of ideas we will use
+throughout our continuing study of mathematical statistics.
+Skim this chapter, and the problems.
+(Just *skim* -- read quickly, without necessarily working through all the details!
+Keep track of passages which you don't fully understand,
+but don't allow these passages to deter you from finishing the reading.
+Familiarity with the ideas is important.
+We will highlight important details in class or with homework,
+and some of the details we will return to when needed ...)
+
+In Chapter 1 we must refresh our memory about
+random variables, distributions, parameters and models,
+identifiability, 
+testing and estimation,
+order statistics and the empirical distribution function,
+Bayes Theorem, priors, posteriors and conjugacy,
+loss functions, decision procedures and risk functions,
+admissibility,
+randomization, 
+prediction,
+sufficient statistics, likelihood, 
+and exponential families.
+
+-----
+
+Some recommended homework problems for chapter 1:
+1.1.1          -- elementary probability model examples
+1.1.4(a)       -- stochastic ordering
+1.2.1          -- elementary bayes rule example
+1.2.3          -- bayes rule: geometric & beta
+1.2.6          -- conjugate familes: Poisson & gamma
+1.2.15         -- Dirichlet as conjugate prior for multinomial
+1.3.1          -- elementary decision theory example
+1.3.11(a)      -- unbiasedness for decision rules coincides with defn for estimates
+1.4.1          -- balls, urns, & predictors
+1.4.20(b)      -- MSPE of optimal predictor of Y based on X
+1.5.1          -- sufficiency in Poisson model (directly, & via factorization thm)
+1.5.8          -- sufficiency of order statistics
+1.5.12         -- minimal sufficiency & likelihood
+1.6.1          -- natural sufficient statistics & parameters for common one-param EFs
+1.6.5          -- two-parameter EFs: beta & gamma
+1.6.6          -- Dirichlet as exponential family
+1.6.19         -- logistic regression
+1.6.27         -- we may choose h in EF
+1.6.28(b)(ii)  -- gaussian is max entropy distr
+1.6.31         -- normal mixtures: hierarchical Bayes
+1.6.32         -- binomial-beta: hierarchical Bayes
+1.6.34         -- stationary Markov chain as exponential family
+
+
+Chapter 2 is about maximum likelihood estimation (mle).
+Sections 2.1 and 2.2 introduce mle and put it in context with
+minimum contrast methods,
+estimating equation methods,
+method of moments,
+least squares,
+and the plug-in and extension principles.
+Of particular interest is Lemma 2.2.1 page 116.
+(NB: Section 5.4.2 is "Asymptotic Normality of Minimum Contrast and M-Estimates";
+see Remark 5.4.2 page 330.)
+The key result of the chapter (the course? mathematical statistics?)
+is pages 122-123, summarized perfectly by the first sentence of Section 2.3 page 121:
+ "Questions of existence and uniqueness of maximum likelihood estimates
+  in canonical exponential families can be answered completely and elegantly."
+(NB: This result is (eventually) the key to
+Theorem 5.2.2 page 303-304 (consistency of mle)
+and Theorem 5.4.3 page 331 (asymptotic normality and efficiency of mle)
+and Theorem 5.4.5 page 334 (optimal testing).)
+Section 2.4.4 covers the celebrated EM algorithm.
+
+
+For our purposes, Chapter 3 has two parts:
+Bayes & minimax estimation (Sections 3.2 and 3.3),
+and UMVU estimation & the information inequality (Section 3.4.2).
+
+
+Chapter 4: Hypothesis Testing.
+
+We have covered estimation in depth (Chapter 2)
+and decision theory more generally (Chapter 3).
+Lehmann's two books are "Theory of Point Estimation"
+and "Testing Statistical Hypothesis".
+B&D's Chapter 4 is a condensed version of the latter.
+
+Section 4.1 provides a comprehensive summary,
+including introduction to the Neyman-Pearson framework
+(pages 216-219). Statistical power is defined on page 217.
+The p-value is introduced on page 221.
+Section 4.2 covers the Likelihood Ratio Test Statistic
+and its optimality (the Neyman-Pearson Lemma).
+Example 4.2.2 is especially valuable.
+Section 4.3 generalizes this optimality to
+MLR (monotone likelihood ratio) families
+and UMP (uniformly most powerful) tests.
+The Generalized Likelihood Ratio Test Statistic
+is covered in Section 4.9.
+*** Understanding Section 4.9.1 is our goal! ***
+
+Also of interest is Section 4.5,
+the duality between tests and confidence regions.
+
+
+In Chapter 5 we address limit theory for our earlier work.
+Section 5.1 pp 297-301 is a useful introduction/summary for "the meaning and uses of asymptotics".
+Page 301: consistency: "The least we can ask of our estimate ..."
+Theorem 5.2.2 pp 303-304: consistency of MLE in EF.
+Section 5.2.2 pp 304-306: consistency of minimum contrast estimates.
+Theorem 5.3.5 pp 322-323: asymptotic normality of MLE in EF.
+Theorem 5.4.2 p 328 is "Asymptotic Normality of Minimum Contrast and M-Estimates"; see Remark 5.4.2 page 330.
+Theorem 5.4.3 p 331 is "Asymptotic Normality *and Efficiency* of the MLE"; NB: Hodges Example 5.4.2 p 332.
+Theorems 5.4.4 and 5.4.5 pp 333-334: consistency and optimality of MLE-based testing.
+
+
+In Chapter 6 we focus on the Gaussian Linear Model,
+which has been used as a running example throughout the textbook
+(Example 1.1.4 pp 9-10, Example 2.1.1 pp 100-101, etc.).
+
+Section 6.1: the Gaussian linear model.
+See in particular Corollary 6.1.1(iv) p 372, for the model given on p 366.
+
+Section 6.2.1: asy normality of M-estimates.
+Section 6.2.2: asy normality *and efficiency* of MLE.
+
+NB: "[...] the expected value of the Hessian (curvature matrix)
+of log f_theta(X) is the negative of the Fisher Information." (page 386)
+
+Section 6.3.1: GLRT is asy Chi-square.
+
+Section 6.5: the generalized linear model.
+
+We end 553.730 with Problem 6.6.8 pp 437-438
+(model selection in the Gaussian linear model)
+
