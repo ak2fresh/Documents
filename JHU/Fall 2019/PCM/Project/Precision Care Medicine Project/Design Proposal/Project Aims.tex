@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{EN.580.670 Design Project Aims}
+\author{Ak}
+\date{October 2019}
+
+\begin{document}
+
+
+
+\maketitle
+
+
+
+\section{Project Aims}
+
+DVT (Deep Vein Thrombosis) and PE (Pulmonary Embolisms) are the major contributors to the common yet preventable disease known as VTE (Venous Thromboembolism). In a 2008 Report, the Surgeon General of the United States approximated that DVT and PE accounted for greater than 100,000 death per year \cite{SG}.  Thrombosis in a medical setting can be caused by surgery,trauma or prolonged bed-rest, thus putting all patients in an ICU setting at risk for developing a thrombus \cite{kyrle2005deep}. Furthermore, only 25\% of symptomatic patients have a thrombus, thus making it hard to distinguish from normal symptoms patients feel in the PICU \cite{kyrle2005deep}. Currently, the treatments for VTE and PE is to administer Heparin, however administering Heparin can be dangerous as it can cause bleeding \cite{walker1980predictors}. Additionally, approximately 5\% to 10\% of patients treated with Heparin for thrombosis develop a Thrombocytopenia, which is also morbid \cite{sheridan1986diagnostic}.
+
+Clinicians have a tough time predicting if a patient is at risk for developing a VTE. Currently there no standardized risk assessment model for VTE in a hospitalized setting \cite{stuck2017risk}. For a majority of ICU patients, the standard therapy is a combination of the pharmacologic and or mechanical prophylaxis. In spite of this however, almost 10\% of surgical ICU patients have a VTE incidence \cite{cook2001prevention}. Moreover, diagnosis of VTE is typically at the late stages as the onset of the disease is asymptomatic. The current diagnostic approach is dependent on patient reported symptoms as well as physiologic parameters. Diagnostic tools, such as the Wells Score are not sensitive enough for critically ill. 
+
+\subsection{Pre-process the dataset and identify features of predictive significance}
+
+\subsubsection{Categorize data into Positive/Negative Labels for VTE after ICU admission}
+Develop code to parse thru data and identify proper DVT/PE positive label. A positive label consist of a patient with the proper ICD 10 codes for DVT and PE, and diagnosis that was not present at admission i.e. they were diagnosed during patients stay in ICU. Furthermore, in order for the time-series data to be relevant for analysis, the timeline of the patient must be such that they went from the Operating Room to the ICU. Finally, in order to confirm the positive labels, we will cross-reference positive patients with CT data to validate label. Patients who recieve CT's with contrast and subsequently put on anticoagulants are considered positive for VTE. 
+
+\subsubsection{Compile and test a list of known relevant features (from Caprini, Pisa and clinician input)}
+
+In order to develop a proper risk assessment model, one must first identify the relevant features for detection. This will be compiled by analyzing available data thru PCA, determine relevant features used in previous models such as Caprini and Pisa, and using clinicians professional input.  
+
+%Develop Python code to parse thru data to and identify ICU patients that were diagnosed with PE and DVT by sorting the proper IDC 10 codes provided to us. Next, we will select only patients who were diagnosed in the ICU, or diagnosis was not present upon admission, as we in only interested in patients that will develop the disease will being admitted. Following that, we extract the physiological data for the respected patients. Finally we develop an initial PCA analysis to determine what are the relevant features for detection. 
+
+\subsection{ Design a risk assessment model for VTE}
+
+%basically don’t just employ fully data-driven algorithms for feature selection. First start by hand-picking features using clinical PI’s input, then incorporate features used in previous or current gold-standards models for VTE prediction. Then you could explore/experiment with feature selection methods which are A LOT out there. Additionally, you need to understand the features before employing any data-driven feature selection algorithms as applying them blindly could lead to serious bias in the model. Also, put this (Aim 2) into Aim 1 as a sub-aim (Aim 1b)  
+
+Using the relevant patient data and features, we will develop a risk assessment model in order to determine whether or not a patient will develop VTE. This model will incorporate patient information and real time data for assessment,with an aim to perform on par Caprini. Our group will test several different conventional regression and machine learning algorithms to determine a proper method for developing the risk assessment model. 
+
+%Using the features detected from the PCA analysis, we will develop a predictive model to mark patients that are at risk of developing PE and DVT. This will be accomplished by detecting and analyzing key changes of features in the patients physiological data.
+
+
+\subsection{Design and validate a real-time predictive model for VTE}
+
+%Predict prob of likelihood of VTE (w/in 5, 10 hrs)Scope of study is real time. Another approach as opposed to real-time risk prediction: survival analysis which predicts the time-to-event (time to VTE from ICU admission, etc.) but that is quite a different approach and maybe outside the scope of your project here. Start with Cox, then move on to machine-learning methods for survival (random survival forest, nnet-survival, deephit etc) 
+
+Our final step is to expand the current risk assessment model to a real-time predictive model such that it is able to analyze data in real time. We will develop an extension for the risk assessment model from Aim II, that will convert the previous static model to a dynamic model capable of real time analysis. An alternative approach instead of real-time analysis is to implement a survival prediction model to estimate a VTE event from ICU admission time. 
+
+%Our final step is expand our predictive model to work for real time analysis. This will allow doctors sufficient time in order to administers proper treatment for patients to avert maturation of disease. 
+
+
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{ref.bib}
+
+\end{document}
