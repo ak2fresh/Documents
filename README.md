@@ -1,4 +1,1 @@
 # Documents
-JHU
-  School Stuff
-  
